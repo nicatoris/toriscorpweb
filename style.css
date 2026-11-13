@@ -1,0 +1,168 @@
+/* scrolling text */
+.scroll-left {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    color: black;
+    /* border: 1px solid orange; */
+}
+
+.scroll-left p {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 28px;
+    line-height: 50px;
+    text-align: center;
+    transform: translateX(100%);
+    animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+h1,
+h2 {
+    font-family: "Geist Pixel", sans-serif;
+}
+
+html {
+    background-color: black
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 80px auto;
+    align-items: start;
+}
+
+.window {
+    place-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.wide {
+    grid-column: span 2;
+    width: 90%;
+    justify-self: center;
+    text-align: center;
+}
+
+.wide h1 {
+    margin: 0;
+    font-size: 60px;
+}
+
+.wide p {
+    margin: 4px 0 0;
+    font-size: 28px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.body {
+    text-align: center;
+}
+
+.body p {
+    margin: 4px 0 0;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-grid img {
+    width: 270px;
+    max-width: 100%;
+    display: block;
+}
+
+/* for only one image */
+.item:only-child img {
+    width: 500px;
+}
+
+/* download buttons */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.item button {
+    margin: 0;
+}
+
+/* experiments window */
+.exp {
+    display: flex;
+    flex-direction: column;
+}
+
+.exp .scroll-left {
+    margin-top: auto;
+}
+
+.scroll-left {
+    width: 100%;
+    min-width: 300px;
+}
+
+.scroll-left span {
+    margin-right: 80px;
+}
+
+/* phones */
+@media (max-width: 700px) {
+    main {
+        grid-template-columns: 1fr;
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .wide {
+        grid-column: auto;
+        width: auto;
+    }
+
+    .wide h1 {
+        font-size: 36px;
+    }
+
+    .wide p {
+        font-size: 18px;
+    }
+
+    .scroll-left {
+        min-width: 0;
+    }
+}
