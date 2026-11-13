@@ -107,7 +107,7 @@ h2 {
 
 /* for only one image */
 .image-grid img:only-child,
-S{
+.image-grid .item:only-child img {
     width: 500px;
 }
 
@@ -128,6 +128,53 @@ S{
 
 .scroll-left span {
     margin-right: 80px;
+}
+
+.about-section {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #808080;
+}
+
+.big-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 18px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #404040 #404040 #ffffff;
+}
+
+.big-btn:active {
+    border-color: #404040 #ffffff #ffffff #404040;
+}
+
+/* live clock */
+.clock-wrap {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    container-type: inline-size;
+}
+
+.clock-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.clock {
+    position: absolute;
+    bottom: 3cqw;
+    right: 3cqw;
+    padding: 0.5cqw 1.5cqw;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 5cqw;
+    white-space: nowrap;
 }
 
 /* phones */
