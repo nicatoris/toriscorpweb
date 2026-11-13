@@ -8,6 +8,11 @@
 /* page */
 html {
     background-color: black;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.08) 0 1px,
+        transparent 1px 3px
+    );    
 }
 
 body {
