@@ -1,5 +1,4 @@
-/* spacing used everywhere:
-   --gap = between windows and around the page
+/* --gap = between windows and around the page
    --pad = inside windows and between everything in a window */
 :root {
     --gap: 20px;
@@ -39,7 +38,6 @@ h2 {
     margin: 0;
 }
 
-/* windows */
 .window {
     display: flex;
     flex-direction: column;
@@ -51,7 +49,6 @@ h2 {
     text-align: center;
 }
 
-/* full-width window */
 .wide {
     grid-column: 1 / -1;
 }
@@ -64,7 +61,7 @@ h2 {
     font-size: clamp(18px, 3vw, 28px);
 }
 
-/* about window */
+/* about */
 .body p {
     font-size: 20px;
     line-height: 1.4;
@@ -97,7 +94,7 @@ h2 {
     border-color: #404040 #ffffff #ffffff #404040;
 }
 
-/* experiments window */
+/* experiments */
 .image-grid {
     display: flex;
     flex-wrap: wrap;
