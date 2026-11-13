@@ -3,10 +3,14 @@ document.querySelectorAll(".scroll-left p").forEach(function (p) {
     p.innerHTML += p.innerHTML;
 });
 
-// live clock
+// live clock (facility page only)
+var clock = document.getElementById("clock");
+
 function updateClock() {
-    var now = new Date();
-    document.getElementById("clock").textContent = now.toLocaleTimeString();
+    clock.textContent = new Date().toLocaleTimeString();
 }
-updateClock();
-setInterval(updateClock, 1000);
+
+if (clock) {
+    updateClock();
+    setInterval(updateClock, 1000);
+}

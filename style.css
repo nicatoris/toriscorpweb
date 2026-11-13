@@ -1,87 +1,71 @@
-/* scrolling text */
-.scroll-left {
-    height: 50px;
-    overflow: hidden;
-    position: relative;
-    color: black;
-    /* border: 1px solid orange; */
+/* spacing used everywhere:
+   --gap = between windows and around the page
+   --pad = inside windows and between everything in a window */
+:root {
+    --gap: 20px;
+    --pad: 10px;
 }
 
-.scroll-left p {
-    position: absolute;
-    width: max-content;
-    height: 100%;
-    margin: 0;
-    white-space: nowrap;
-    font-size: 28px;
-    line-height: 50px;
-    text-align: center;
-    animation: scroll-left 15s linear infinite;
-}
-
-@keyframes scroll-left {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-h1,
-h2 {
-    font-family: "Geist Pixel", sans-serif;
-}
-
+/* page */
 html {
-    background-color: black
+    background-color: black;
+}
+
+body {
+    margin: 0;
 }
 
 main {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    gap: 20px;
+    gap: var(--gap);
     max-width: 900px;
     margin: 80px auto;
+    padding: 0 var(--gap);
 }
 
+/* text */
+h1,
+h2 {
+    margin: 0;
+    font-family: "Geist Pixel", sans-serif;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.window p {
+    margin: 0;
+}
+
+/* windows */
 .window {
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pad);
+    padding: var(--pad);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    padding: 10px;
-}
-
-.wide {
-    grid-column: 1 / -1;
     text-align: center;
 }
 
+/* full-width window */
+.wide {
+    grid-column: 1 / -1;
+}
+
 .wide h1 {
-    margin: 0;
     font-size: clamp(36px, 7vw, 60px);
 }
 
 .wide p {
-    margin: 4px 0 0;
     font-size: clamp(18px, 3vw, 28px);
 }
 
-h2 {
-    margin: 0;
-    font-size: 30px;
-}
-
-.body {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* about window */
 .body p {
-    margin: 4px 0 0;
     font-size: 20px;
     line-height: 1.4;
 }
@@ -89,60 +73,17 @@ h2 {
 .body img {
     max-width: 100%;
     height: auto;
-    margin: 10px;
-}
-
-.image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.image-grid img {
-    width: 270px;
-    max-width: 100%;
-    display: block;
-}
-
-/* for only one image */
-.image-grid img:only-child,
-.image-grid .item:only-child img {
-    width: 500px;
-}
-
-/* experiments window */
-.exp {
-    display: flex;
-    flex-direction: column;
-}
-
-.exp .image-grid{
-    margin-top: 10px;
-}
-
-.exp .scroll-left {
-    margin-top: auto;
-}
-
-.scroll-left {
-    width: 100%;
-    min-width: 300px;
-}
-
-.scroll-left span {
-    margin-right: 80px;
 }
 
 .about-section {
     margin-top: auto;
-    padding-top: 6px;
+    padding-top: var(--pad);
     border-top: 2px solid #808080;
 }
 
 .big-btn {
     display: inline-block;
-    margin-top: 6px;
+    margin-top: var(--pad);
     padding: 8px 18px;
     font-size: 20px;
     color: black;
@@ -156,11 +97,65 @@ h2 {
     border-color: #404040 #ffffff #ffffff #404040;
 }
 
+/* experiments window */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.image-grid img {
+    display: block;
+    width: 270px;
+    max-width: 100%;
+}
+
+/* for only one image */
+.image-grid img:only-child {
+    width: 500px;
+}
+
+/* scrolling text */
+.scroll-left {
+    position: relative;
+    width: 100%;
+    min-width: 300px;
+    height: 50px;
+    margin-top: auto;
+    overflow: hidden;
+    color: black;
+}
+
+.scroll-left p {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 28px;
+    line-height: 50px;
+    animation: scroll-left 15s linear infinite;
+}
+
+.scroll-left span {
+    margin-right: 80px;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 /* live clock */
 .clock-wrap {
     position: relative;
     width: 100%;
-    margin: auto;
     container-type: inline-size;
 }
 
@@ -185,13 +180,8 @@ h2 {
 @media (max-width: 700px) {
     main {
         grid-template-columns: 1fr;
-        margin: 20px auto;
-        padding: 0 10px;
-    }
-
-    .wide {
-        grid-column: auto;
-        width: auto;
+        margin: var(--pad) auto;
+        padding: 0 var(--pad);
     }
 
     .wide h1 {
