@@ -56,20 +56,18 @@ main {
 }
 
 .wide {
-    grid-column: span 2;
-    width: 90%;
-    justify-self: center;
+    grid-column: 1 / -1;
     text-align: center;
 }
 
 .wide h1 {
     margin: 0;
-    font-size: 60px;
+    font-size: clamp(36px, 7vw, 60px);
 }
 
 .wide p {
     margin: 4px 0 0;
-    font-size: 28px;
+    font-size: clamp(18px, 3vw, 28px);
 }
 
 h2 {
