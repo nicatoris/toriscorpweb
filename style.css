@@ -106,20 +106,9 @@ h2 {
 }
 
 /* for only one image */
-.item:only-child img {
+.image-grid img:only-child,
+S{
     width: 500px;
-}
-
-/* download buttons */
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-
-.item button {
-    margin: 0;
 }
 
 /* experiments window */
