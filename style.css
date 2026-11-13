@@ -73,9 +73,12 @@ h2 {
 }
 
 .about-section {
+    align-self: stretch;
     margin-top: auto;
     padding-top: var(--pad);
     border-top: 2px solid #808080;
+    margin-left: calc(-1 * var(--pad));
+    margin-right: calc(-1 * var(--pad));
 }
 
 .big-btn {
