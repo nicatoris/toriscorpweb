@@ -49,7 +49,6 @@ h2 {
     align-items: center;
     gap: var(--pad);
     padding: var(--pad);
-    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
@@ -81,9 +80,6 @@ h2 {
     align-self: stretch;
     margin-top: auto;
     padding-top: var(--pad);
-    border-top: 2px solid #808080;
-    margin-left: calc(-1 * var(--pad));
-    margin-right: calc(-1 * var(--pad));
 }
 
 .big-btn {
@@ -102,12 +98,37 @@ h2 {
     border-color: #404040 #ffffff #ffffff #404040;
 }
 
+.field-border {
+    
+    padding: 8px;
+    background: #ffffffab;
+    align-self: stretch;
+    margin-top: auto;
+    box-shadow:
+        inset -1px -1px #fff,
+        inset 1px 1px grey,
+        inset -2px -2px #dfdfdf,
+        inset 2px 2px #0a0a0a;
+}
+
+.title-border {
+    
+    padding-inline: 10px;
+    background: #ffffffab;
+    box-shadow:
+        inset -1px -1px #fff,
+        inset 1px 1px grey,
+        inset -2px -2px #dfdfdf,
+        inset 2px 2px #0a0a0a;
+}
+
 /* experiments */
 .image-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--gap);
+    margin-top: auto;
 }
 
 .image-grid img {
@@ -118,7 +139,7 @@ h2 {
 
 /* for only one image */
 .image-grid img:only-child {
-    width: 500px;
+    width: 550px;
 }
 
 /* scrolling text */
