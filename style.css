@@ -185,7 +185,8 @@ h2 {
     container-type: inline-size;
 }
 
-.clock-wrap img {
+.clock-wrap img,
+.clock-wrap video {
     display: block;
     width: 100%;
     height: auto;
